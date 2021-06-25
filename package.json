@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "vite --port 8080",
+    "serve:tauri": "tauri dev",
+    "build": "vite build && tauri build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mdi/font": "5.9.55",
+    "@tauri-apps/api": "1.0.0-beta.2",
+    "roboto-fontface": "0.10.0",
+    "vue": "3.1.2",
+    "vuetify": "3.0.0-alpha.6"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "1.0.0-beta.3",
+    "@vitejs/plugin-vue": "1.2.3",
+    "@vue/compiler-sfc": "3.1.2",
+    "sass": "1.35.1",
+    "sass-loader": "12.1.0",
+    "vite": "2.3.8",
+    "vue-cli-plugin-vuetify": "2.4.1"
+  }
+}
