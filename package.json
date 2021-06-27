@@ -2,21 +2,27 @@
   "name": "vite-tauri-template",
   "version": "1.0.0",
   "description": "Vite + Tauri + Vue 3 + Vuetify 3 desktop app template",
-  "keywords": ["vite", "tauri", "vue", "vuetify", "desktop"],
+  "keywords": [
+    "vite",
+    "tauri",
+    "vue",
+    "vuetify",
+    "desktop"
+  ],
   "scripts": {
     "serve": "vite --port 8080",
+    "serve:native": "VITE_HTTP_HANDLER=NATIVE vite --port 8080",
     "serve:tauri": "tauri dev",
-    "build:vite": "vite build",
-    "build:tauri": "tauri build",
-    "build": "build:vite && build:tauri",
-    "preview": "vite preview"
+    "build:web": "vite build",
+    "build": "VITE_HTTP_HANDLER=NATIVE vite build && tauri build"
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
     "@tauri-apps/api": "1.0.0-beta.3",
     "roboto-fontface": "0.10.0",
     "vue": "3.1.2",
-    "vuetify": "3.0.0-alpha.7"
+    "vuetify": "3.0.0-alpha.7",
+    "ynetwork": "2.8.1"
   },
   "devDependencies": {
     "@tauri-apps/cli": "1.0.0-beta.3",
