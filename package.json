@@ -1,6 +1,6 @@
 {
   "name": "vite-tauri-template",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Vite + Tauri + Vue 3 + Vuetify 3 desktop app template",
   "keywords": [
     "vite",
