@@ -1,17 +1,22 @@
 {
+  "name": "vite-tauri-template",
   "version": "1.0.0",
+  "description": "Vite + Tauri + Vue 3 + Vuetify 3 desktop app template",
+  "keywords": ["vite", "tauri", "vue", "vuetify", "desktop"],
   "scripts": {
     "serve": "vite --port 8080",
     "serve:tauri": "tauri dev",
-    "build": "vite build && tauri build",
+    "build:vite": "vite build",
+    "build:tauri": "tauri build",
+    "build": "build:vite && build:tauri",
     "preview": "vite preview"
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
-    "@tauri-apps/api": "1.0.0-beta.2",
+    "@tauri-apps/api": "1.0.0-beta.3",
     "roboto-fontface": "0.10.0",
     "vue": "3.1.2",
-    "vuetify": "3.0.0-alpha.6"
+    "vuetify": "3.0.0-alpha.7"
   },
   "devDependencies": {
     "@tauri-apps/cli": "1.0.0-beta.3",
@@ -21,5 +26,10 @@
     "sass-loader": "12.1.0",
     "vite": "2.3.8",
     "vue-cli-plugin-vuetify": "2.4.1"
-  }
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/yooneskh/vite-tauri-template"
+  },
+  "license": "ISC"
 }

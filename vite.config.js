@@ -5,5 +5,10 @@ export default defineConfig({
   plugins: [vue()],
   define: {
     'process.env': {}
+  },
+  rollupOptions: {
+  	output: {
+  	  inlineDynamicImports: true
+  	}
   }
 });

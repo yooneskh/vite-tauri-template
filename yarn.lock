@@ -75,10 +75,10 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@tauri-apps/api@1.0.0-beta.2":
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@tauri-apps/api/-/api-1.0.0-beta.2.tgz#44df5d4faf47b925c2f30967997db26cef705cdd"
-  integrity sha512-PGg+1SULwCkSART927ScjhpkgTrE2t6WR60ovXTPIzchvc5kD79FTfwZgnvzIyrBNZXB9ilfNoQl9quQ/sjhqg==
+"@tauri-apps/api@1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@tauri-apps/api/-/api-1.0.0-beta.3.tgz#4794ee794e023d3f00eb0926b6b1825a251ec3d4"
+  integrity sha512-EtgykB6FVO6/gc51MXXXnNhOp81UUeI9en2CwetVKOMmXyqFSBR9yDP/P7yg658mKDefLaAEnm6eSHQxVMmB3w==
 
 "@tauri-apps/cli@1.0.0-beta.3":
   version "1.0.0-beta.3"
@@ -3433,10 +3433,10 @@ vue@3.1.2:
     "@vue/runtime-dom" "3.1.2"
     "@vue/shared" "3.1.2"
 
-vuetify@3.0.0-alpha.6:
-  version "3.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.0-alpha.6.tgz#26c7eecd8e1648767fd8284e2d3944e1df41294c"
-  integrity sha512-6JkWZiCS7CdTM2dWc43vgWFvTH4FdJG5cyrjv8NqG+46NmGHvyeWH3DYhne6hQM6rk4vtlN1IdYqVr5ZHFxBng==
+vuetify@3.0.0-alpha.7:
+  version "3.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.0-alpha.7.tgz#636101ed7e8191debf2a733589350f21292b9f97"
+  integrity sha512-1bmDaWht1BHLl7nwCBe+h9ZMHgmKRE46d7o9tC0Zvz7EMnATRFiu2PiszlgXBZTBCPyWa+d9d60OwiOgCkwScw==
 
 wcwidth@^1.0.1:
   version "1.0.1"
