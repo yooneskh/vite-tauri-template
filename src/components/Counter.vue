@@ -20,7 +20,7 @@ function addCount() {
 
       <v-spacer />
 
-      <v-btn depressed color="primary" @click="addCount">
+      <v-btn flat color="primary" @click="addCount">
         Count Up
       </v-btn>
 
