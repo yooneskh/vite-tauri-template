@@ -10,6 +10,7 @@
     "desktop"
   ],
   "scripts": {
+    "lint": "exit 0;",
     "serve": "vite --port 8080",
     "serve:native": "VITE_HTTP_HANDLER=NATIVE vite --port 8080",
     "serve:tauri": "tauri dev",
