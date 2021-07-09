@@ -158,10 +158,10 @@
   dependencies:
     "@types/node" "*"
 
-"@vitejs/plugin-vue@1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-1.2.3.tgz#2e8e008b1cc3a6ad1dfbec75743c7ffd9b4872a6"
-  integrity sha512-LlnLpObkGKZ+b7dcpL4T24l13nPSHLjo+6Oc7MbZiKz5PMAUzADfNJ3EKfYIQ0l0969nxf2jp/9vsfnuJ7h6fw==
+"@vitejs/plugin-vue@1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-1.2.4.tgz#a7aa6e6a31c556a8b781de730316deeecf7f56f2"
+  integrity sha512-D/3H9plevPQGgQGwmV6eecvOnooLTecPR63HPffVVWPEhbfvmtYLWgznzs456NBb2DItiRTCIa1yWxvGqC+I8A==
 
 "@vue/compiler-core@3.1.2":
   version "3.1.2"
