@@ -5,7 +5,7 @@
 <template>
   <v-container class="page text-center">
 
-    <h1>
+    <h1 class="text-h4">
       This is about us!
     </h1>
 

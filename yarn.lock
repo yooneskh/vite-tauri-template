@@ -3441,6 +3441,18 @@ vue-cli-plugin-vuetify@2.4.1:
     semver "^7.1.2"
     shelljs "^0.8.3"
 
+vue-demi@latest:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.10.1.tgz#229b81395510f02f4ee255344557a12cc0120930"
+  integrity sha512-L6Oi+BvmMv6YXvqv5rJNCFHEKSVu7llpWWJczqmAQYOdmPPw5PNYoz1KKS//Fxhi+4QP64dsPjtmvnYGo1jemA==
+
+vue-global-api@0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vue-global-api/-/vue-global-api-0.1.2.tgz#e7e9c81ca5fb0a41039c56f845b189062494a522"
+  integrity sha512-TJBbozre6+kU3d82Cx31hSRP8+jG6pciRsSdThaR9RE+r5YZ9yIvDQPl5ifMd65Ww4c05rFo1rM6lDbD+b0jhw==
+  dependencies:
+    vue-demi latest
+
 vue-router@4.0.10:
   version "4.0.10"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.10.tgz#ec8fda032949b2a31d3273170f8f376e86eb52ac"

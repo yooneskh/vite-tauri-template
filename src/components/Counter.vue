@@ -1,7 +1,5 @@
 <script setup>
 
-import { ref, computed } from 'vue';
-
 const count = ref(0);
 const doubledCount = computed(() => count.value * 2);
 
@@ -15,6 +13,7 @@ function addCount() {
   <v-card>
 
     <v-card-title>
+
       <v-icon class="me-3">mdi-plus</v-icon>
       Counter
 

@@ -1,8 +1,6 @@
 <script setup>
 
-import { ref } from 'vue';
-import { yetch } from '../plugins/request';
-
+import YNetwork from 'ynetwork';
 
 const url = ref('https://google.com');
 const loading = ref(false);
@@ -12,7 +10,7 @@ const others = ref({});
 async function makeRequest() {
 
   loading.value = true;
-  const { status, result: r, headers } = await yetch({ url: url.value, method: 'GET' });
+  const { status, result: r, headers } = await YNetwork.get(url.value);
   loading.value = false;
 
   result.value = r;
