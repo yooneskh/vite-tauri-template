@@ -21,9 +21,9 @@
     "@mdi/font": "5.9.55",
     "@tauri-apps/api": "1.0.0-beta.4",
     "roboto-fontface": "0.10.0",
-    "vue": "3.1.2",
-    "vue-router": "4",
-    "vuetify": "3.0.0-alpha.7",
+    "vue": "3.1.4",
+    "vue-router": "4.0.10",
+    "vuetify": "3.0.0-alpha.9",
     "ynetwork": "2.8.1"
   },
   "devDependencies": {
