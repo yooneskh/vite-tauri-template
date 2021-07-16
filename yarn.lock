@@ -80,10 +80,10 @@
   resolved "https://registry.yarnpkg.com/@tauri-apps/api/-/api-1.0.0-beta.5.tgz#32727b3b478f67330a79409ceaf16a4a51410fce"
   integrity sha512-gecjskr6nCLyjky2rtth64Jsk1qyHeWykYO5wroEkoTwESJJEzFnpnqyZHCWgkRLJC1TIYEv+lddldKvH/O1RA==
 
-"@tauri-apps/cli@1.0.0-beta.5":
-  version "1.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@tauri-apps/cli/-/cli-1.0.0-beta.5.tgz#b71007a9fa18617ffe1671f339bb3b6cbf8549c2"
-  integrity sha512-1FdeLKhqA0wNAUnkfgJRZ0pf9qxcjBs4xFCSvTLY+uB5LQjoeQ0R0olwaNdise5OHm4Aoj8MEMP+tGTQA/QZtw==
+"@tauri-apps/cli@1.0.0-beta.6":
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@tauri-apps/cli/-/cli-1.0.0-beta.6.tgz#29e461036ea36a935cd91c0e290957c922ff9aa4"
+  integrity sha512-zcF7+diZk3LHcS1/Rwo2f/6hRMY9fOVQYSgqSkjZDGGkTXhysrEiCCc4DwLmB1QES9P0lhRt4CPBJLpH0MdsWA==
   dependencies:
     "@tauri-apps/toml" "2.2.4"
     chalk "4.1.1"
