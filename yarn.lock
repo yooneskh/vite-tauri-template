@@ -3470,10 +3470,10 @@ vue-demi@latest:
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.10.1.tgz#229b81395510f02f4ee255344557a12cc0120930"
   integrity sha512-L6Oi+BvmMv6YXvqv5rJNCFHEKSVu7llpWWJczqmAQYOdmPPw5PNYoz1KKS//Fxhi+4QP64dsPjtmvnYGo1jemA==
 
-vue-global-api@0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/vue-global-api/-/vue-global-api-0.1.2.tgz#e7e9c81ca5fb0a41039c56f845b189062494a522"
-  integrity sha512-TJBbozre6+kU3d82Cx31hSRP8+jG6pciRsSdThaR9RE+r5YZ9yIvDQPl5ifMd65Ww4c05rFo1rM6lDbD+b0jhw==
+vue-global-api@0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/vue-global-api/-/vue-global-api-0.2.4.tgz#438f0b9a7b9ee6387c4619dd2d314b201ceeb650"
+  integrity sha512-Cm84AZiALt8f4CJZzPvbForTzAUYe41msnzUnRK6B7YkaDaN8g87ap8CpHWvTU0+XtyDeLLAeQoRr+uwamxfpQ==
   dependencies:
     vue-demi latest
 
