@@ -24,7 +24,7 @@
     "vue": "3.2.6",
     "vue-global-api": "0.4.1",
     "vue-router": "4.0.10",
-    "vuetify": "3.0.0-alpha.9",
+    "vuetify": "3.0.0-alpha.10",
     "ynetwork": "2.8.1"
   },
   "devDependencies": {

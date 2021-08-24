@@ -3607,10 +3607,10 @@ vue@3.2.6:
     "@vue/runtime-dom" "3.2.6"
     "@vue/shared" "3.2.6"
 
-vuetify@3.0.0-alpha.9:
-  version "3.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.0-alpha.9.tgz#e0e91152568b3da260e62e90775346a4facb0da5"
-  integrity sha512-F8xwdAp65gUY0kf0lGKMKhYZDAA2j6cqLEc63uqIOq/dZ8R2k3ZSfBMGtt+jOMCt/w28BZ7rx7AuLxPA5oF/pA==
+vuetify@3.0.0-alpha.10:
+  version "3.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.0-alpha.10.tgz#b088c38d30a4b42286d8ec242c5e051157e0ee0d"
+  integrity sha512-+y8ooacEJvDVLSJ0EuazUlJ8dFEjZv00WLGlCjTSP1Nb114a6SvCwyUvyMJItOiJktdOBQlTz7iBS8Syu9YVNw==
 
 wcwidth@^1.0.1:
   version "1.0.1"
