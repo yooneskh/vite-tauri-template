@@ -3564,10 +3564,10 @@ vite@2.5.1:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vue-cli-plugin-vuetify@2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.4.1.tgz#a31a9ddb274c8e512aeca7dc2f29d828a18df0af"
-  integrity sha512-ZfhvQ13X41atsCSKdSGiHnSJlhAccv4QIFOZmd8kyq6NktpeeWlvQz/dEKBf6u1AWKmKdwiCDuxS2VNT9fxhOA==
+vue-cli-plugin-vuetify@2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.4.2.tgz#f5c54a853cd5b06633da4a508ff4aa5b6b6275e0"
+  integrity sha512-aJXkzz3CbN/D1/aJ53slsp8hGaruQHhj/mkNjsfpkqhGglLex7UBnvcDwi5+D1tNk+XlddANLgRe9tmCFMorVA==
   dependencies:
     null-loader "^3.0.0"
     semver "^7.1.2"
