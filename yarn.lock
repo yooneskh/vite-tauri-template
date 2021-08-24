@@ -1092,6 +1092,11 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
+eslint-config-vue-global-api@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-vue-global-api/-/eslint-config-vue-global-api-0.4.1.tgz#f735b8b61bd94948131604c0f3e4aaba582493a5"
+  integrity sha512-mJTiKBGLe1FXmEifYzCQzUTBpFv8OtfYzP6PAOuVRf+3hkGLMeiDh4bVzZEaJfdExtc8mPw9vp35YSLhwTselQ==
+
 estree-walker@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
@@ -3578,11 +3583,12 @@ vue-demi@latest:
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.10.1.tgz#229b81395510f02f4ee255344557a12cc0120930"
   integrity sha512-L6Oi+BvmMv6YXvqv5rJNCFHEKSVu7llpWWJczqmAQYOdmPPw5PNYoz1KKS//Fxhi+4QP64dsPjtmvnYGo1jemA==
 
-vue-global-api@0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/vue-global-api/-/vue-global-api-0.2.4.tgz#438f0b9a7b9ee6387c4619dd2d314b201ceeb650"
-  integrity sha512-Cm84AZiALt8f4CJZzPvbForTzAUYe41msnzUnRK6B7YkaDaN8g87ap8CpHWvTU0+XtyDeLLAeQoRr+uwamxfpQ==
+vue-global-api@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vue-global-api/-/vue-global-api-0.4.1.tgz#b26680200e84d9682986d0258b826b51acd07531"
+  integrity sha512-283vpYOhVHJCpMkjNVEwZdgaAb+Y93zFaXGAWTI378MLoNuwQydjD/BAy1e81QYEmyA+JbxqcmMZVWcM9rbriw==
   dependencies:
+    eslint-config-vue-global-api "0.4.1"
     vue-demi latest
 
 vue-router@4.0.10:

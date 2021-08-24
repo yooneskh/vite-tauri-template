@@ -22,7 +22,7 @@
     "@tauri-apps/api": "1.0.0-beta.8",
     "roboto-fontface": "0.10.0",
     "vue": "3.2.6",
-    "vue-global-api": "0.2.4",
+    "vue-global-api": "0.4.1",
     "vue-router": "4.0.10",
     "vuetify": "3.0.0-alpha.9",
     "ynetwork": "2.8.1"
