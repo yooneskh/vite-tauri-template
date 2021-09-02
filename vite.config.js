@@ -1,8 +1,14 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import vuetify from '@vuetify/vite-plugin';
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    vuetify({
+      autoImport: true
+    })
+  ],
   define: {
     'process.env': {}
   },
@@ -10,5 +16,5 @@ export default defineConfig({
   	output: {
   	  inlineDynamicImports: true
   	}
-  }
+  },
 });
