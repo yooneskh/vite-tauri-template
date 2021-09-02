@@ -1,6 +1,6 @@
 <script setup>
 
-import YNetwork from 'ynetwork';
+import { YNetwork } from 'ynetwork';
 
 const url = ref('https://google.com');
 const loading = ref(false);
@@ -10,10 +10,10 @@ const others = ref({});
 async function makeRequest() {
 
   loading.value = true;
-  const { status, result: r, headers } = await YNetwork.get(url.value);
+  const { status, data: requestData, headers } = await YNetwork.get(url.value);
   loading.value = false;
 
-  result.value = r;
+  result.value = requestData;
   others.value = { status, headers };
 
 }

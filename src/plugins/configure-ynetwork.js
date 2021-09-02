@@ -1,5 +1,5 @@
 import { http } from '@tauri-apps/api';
-import YNetwork from 'ynetwork';
+import { YNetwork } from 'ynetwork';
 
 async function tauriReuestResolver({ method, url, data, headers }) {
 
