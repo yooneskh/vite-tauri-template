@@ -20,10 +20,10 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@mdi/font@5.9.55":
-  version "5.9.55"
-  resolved "https://registry.yarnpkg.com/@mdi/font/-/font-5.9.55.tgz#41acd50b88073ded7095fc3029d8712b6e12f38e"
-  integrity sha512-jswRF6q3eq8NWpWiqct6q+6Fg/I7nUhrxYJfiEM8JJpap0wVJLQdbKtyS65GdlK7S7Ytnx3TTi/bmw+tBhkGmg==
+"@mdi/font@6.4.95":
+  version "6.4.95"
+  resolved "https://registry.yarnpkg.com/@mdi/font/-/font-6.4.95.tgz#d3b7a615c4c82ba2a9c29b2b59b158dced4f9b0e"
+  integrity sha512-jCQdXCD339EXirWYFbZv1Ansthm9j6O3FSQLsfi/mKamnGYxqbUBm5D4UjcVr6HVYIPNwTQQ46HNHlswPD8RcQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -75,12 +75,12 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@tauri-apps/api@^1.0.0-beta.8":
+"@tauri-apps/api@1.0.0-beta.8":
   version "1.0.0-beta.8"
   resolved "https://registry.yarnpkg.com/@tauri-apps/api/-/api-1.0.0-beta.8.tgz#a43dc4a4515148f29bfb616db85445b771e84f78"
   integrity sha512-a56lXB7XvQ4+fKtT0pxpkjTSKhyrQ1Vmjyvt2ox3mT9xw3l7s8IOKHJ1WuqW6TA6xdoy3Cyja3Z3prw8hflS7g==
 
-"@tauri-apps/cli@^1.0.0-beta.10":
+"@tauri-apps/cli@1.0.0-beta.10":
   version "1.0.0-beta.10"
   resolved "https://registry.yarnpkg.com/@tauri-apps/cli/-/cli-1.0.0-beta.10.tgz#753a011d6fbbf1a903e18593b5b99d7dee8ccc5b"
   integrity sha512-T0cvV5Y5vCeEw6tQ7DfuGhXxxe26AwW9i3oYT/AQZlwrLG9Xk02Pp0/lKqd/WeddE3X/IFfSm8YMRCz3VElIWQ==
@@ -260,7 +260,7 @@
   resolved "https://registry.yarnpkg.com/@vuetify/loader-shared/-/loader-shared-1.1.1.tgz#e04d4f60fe3593c710039c157ddd5adc103c5f9b"
   integrity sha512-JUs+8dBr64M/Vgndu9k6LBWzuAj43CrwVp6R94XMY/p7j5MNKsGYG1MSxqxwFN6IXYTxPkclgWZVv2gH+PulUg==
 
-"@vuetify/vite-plugin@^1.0.0-alpha.2":
+"@vuetify/vite-plugin@1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@vuetify/vite-plugin/-/vite-plugin-1.0.0-alpha.2.tgz#1f434f298621f0b3404defeb41512a9e07d9e76b"
   integrity sha512-5A0bnkrq+xG4ltpeasHEo0xqH5szR/khbt+Gf3wZwMT7Az7mpOo8L1zAK/K1r3GtSGwl0AUg6yfDsmVdXXG/gg==
