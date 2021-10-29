@@ -41,6 +41,9 @@ async function tauriReuestResolver({ method, url, data, headers }) {
 
 }
 
+
+YNetwork.setDebug(import.meta.env.DEV);
+
 if (import.meta.env.VITE_HTTP_HANDLER === 'NATIVE') {
-  YNetwork.requestRunner = tauriReuestResolver;
+  YNetwork.setRequestRunner(tauriReuestResolver);
 }

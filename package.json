@@ -21,7 +21,7 @@
     "@mdi/font": "6.4.95",
     "@tauri-apps/api": "1.0.0-beta.8",
     "roboto-fontface": "0.10.0",
-    "vue": "3.2.7",
+    "vue": "3.2.20",
     "vue-global-api": "0.4.1",
     "vue-router": "4.0.11",
     "vuetify": "3.0.0-alpha.11",
@@ -30,7 +30,6 @@
   "devDependencies": {
     "@tauri-apps/cli": "1.0.0-beta.10",
     "@vitejs/plugin-vue": "1.9.4",
-    "@vue/compiler-sfc": "3.2.20",
     "@vuetify/vite-plugin": "1.0.0-alpha.5",
     "sass": "1.43.4",
     "sass-loader": "12.3.0",
