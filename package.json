@@ -30,7 +30,7 @@
   "devDependencies": {
     "@tauri-apps/cli": "1.0.0-beta.10",
     "@vitejs/plugin-vue": "1.9.4",
-    "@vue/compiler-sfc": "3.2.7",
+    "@vue/compiler-sfc": "3.2.20",
     "@vuetify/vite-plugin": "1.0.0-alpha.2",
     "sass": "1.39.0",
     "sass-loader": "12.1.0",
