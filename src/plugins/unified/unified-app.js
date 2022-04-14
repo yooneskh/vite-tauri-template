@@ -1,4 +1,4 @@
-import '../assets/styles/app.scss';
+import './unified-styles.scss';
 
 
 export function unifiedApp(app) {
