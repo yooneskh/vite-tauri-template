@@ -3,4 +3,12 @@ import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
 
 
-export const vuetify = createVuetify();
+export const vuetify = createVuetify({
+  theme: {
+    variations: {
+      colors: ['primary'],
+      lighten: 3,
+      darken: 3
+    }
+  }
+});
