@@ -23,7 +23,7 @@
     "roboto-fontface": "0.10.0",
     "vue": "3.2.33",
     "vue-global-api": "0.4.1",
-    "vue-router": "4.0.11",
+    "vue-router": "4.0.15",
     "vuetify": "3.0.0-alpha.11",
     "ynetwork": "3.0.6"
   },
