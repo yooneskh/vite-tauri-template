@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "1.0.0-beta.10",
-    "@vitejs/plugin-vue": "1.9.4",
+    "@vitejs/plugin-vue": "2.3.2",
     "@vuetify/vite-plugin": "1.0.0-alpha.5",
     "sass": "1.43.4",
     "sass-loader": "12.3.0",
