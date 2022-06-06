@@ -15,7 +15,7 @@
     "vite": "2.9.9"
   },
   "dependencies": {
-    "@mdi/font": "6.6.96",
+    "@mdi/font": "6.7.96",
     "roboto-fontface": "0.10.0",
     "vue": "3.2.33",
     "vuetify": "3.0.0-beta.1"
