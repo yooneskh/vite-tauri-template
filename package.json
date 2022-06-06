@@ -18,7 +18,7 @@
     "build": "VITE_HTTP_HANDLER=NATIVE vite build && tauri build"
   },
   "dependencies": {
-    "@mdi/font": "6.6.96",
+    "@mdi/font": "6.7.96",
     "@tauri-apps/api": "1.0.0-beta.8",
     "roboto-fontface": "0.10.0",
     "vue": "3.2.33",
