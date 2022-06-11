@@ -12,7 +12,7 @@
     "@vitejs/plugin-vue": "2.3.3",
     "@vuetify/vite-plugin": "1.0.0-alpha.11",
     "sass": "1.52.3",
-    "vite": "2.9.9"
+    "vite": "2.9.12"
   },
   "dependencies": {
     "@mdi/font": "6.7.96",
