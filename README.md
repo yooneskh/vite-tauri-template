@@ -17,7 +17,7 @@ This is a starter template for those who want to make a desktop application with
 [Vue Global Api](https://github.com/antfu/vue-global-api) globally registers commonly used composition api functions such as `ref`, `reactive` and ... . makes your `script setup` sections cleaner.
 
 ## Installation
-- Ready your workspace according to tauri. [Tauri Getting Started](https://tauri.studio/en/docs/getting-started/intro/)
+- Ready your workspace according to tauri. [Tauri Getting Started](https://tauri.studio/v1/guides/getting-started/prerequisites)
 
   - **Note:** You only need to install global things such as rust and other os level packages. Any thing related to application itself is already installed and ready for you.
 
