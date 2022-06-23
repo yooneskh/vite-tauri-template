@@ -107,21 +107,13 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.37.tgz#8e6adc3f2759af52f0e85863dfb0b711ecc5c702"
   integrity sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==
 
-"@vuetify/loader-shared@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@vuetify/loader-shared/-/loader-shared-1.4.0.tgz#b993665d126660355924bd4f6d2c176f9bf1e738"
-  integrity sha512-aBlBuDC40tRRLFXXeOMB2mQiIOI4GTaezxv4RjLE4NzC3g2QIQH6yc51E7vWHHp621Ys4vaU3Yo+HdO5lbfJ9g==
+"@vuetify/loader-shared@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@vuetify/loader-shared/-/loader-shared-1.5.0.tgz#2bdfa49497f49a37993064b30fcb3d6f96c7fb0c"
+  integrity sha512-Sc+CUZGtQfMLmXXdZ3fvYWkDwMm5zYvYgsAPWsvXNokCeE7WhNA/IETFMThfF8Nf9mnf+zX9+jdtVhKND3hBkQ==
   dependencies:
     find-cache-dir "^3.3.2"
     upath "^2.0.1"
-
-"@vuetify/vite-plugin@1.0.0-alpha.11":
-  version "1.0.0-alpha.11"
-  resolved "https://registry.yarnpkg.com/@vuetify/vite-plugin/-/vite-plugin-1.0.0-alpha.11.tgz#43cd0fa4134da2467d7dd134b35b5d21a54ddfca"
-  integrity sha512-ADAEubiF+2VHbcsJs0nWCBThc4LX+mGnioYrF0O+jKTvCICT1PJKpp15+M7ZyyM9sAkEFpVH+5FaH5/Ywj7RWg==
-  dependencies:
-    "@vuetify/loader-shared" "^1.4.0"
-    debug "^4.3.3"
 
 anymatch@~3.1.2:
   version "3.1.2"
@@ -569,6 +561,14 @@ upath@^2.0.1:
   resolved "https://registry.yarnpkg.com/upath/-/upath-2.0.1.tgz#50c73dea68d6f6b990f51d279ce6081665d61a8b"
   integrity sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==
 
+vite-plugin-vuetify@1.0.0-alpha.12:
+  version "1.0.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/vite-plugin-vuetify/-/vite-plugin-vuetify-1.0.0-alpha.12.tgz#ee8b6816e6fb66c9c9010d574ecd79b18795d064"
+  integrity sha512-DMb7oY6F67P1RTEU28xQePUnyZdm+sbeGgIF3exBrA5yLL8NKKPIahqJN4+MAWMXCJVwNKy7nsS6zVgOLtcoQg==
+  dependencies:
+    "@vuetify/loader-shared" "^1.5.0"
+    debug "^4.3.3"
+
 vite@2.9.12:
   version "2.9.12"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.12.tgz#b1d636b0a8ac636afe9d83e3792d4895509a941b"
@@ -592,7 +592,7 @@ vue@3.2.37:
     "@vue/server-renderer" "3.2.37"
     "@vue/shared" "3.2.37"
 
-vuetify@3.0.0-beta.1:
-  version "3.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.0-beta.1.tgz#8e3e4e41e00f1f6e00cb0a22b6a8f528581ca3f1"
-  integrity sha512-698CB/Xlvxku2Tm4AsFrmQ7LzMXOjleX7A5tbyQTnhPyt0NI1OTkf5zJUoXL3TNi2TN7DglN+adI6AE69e6CeQ==
+vuetify@3.0.0-beta.4:
+  version "3.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.0-beta.4.tgz#39d6b9cc38f0e9f5f342dff3d7ca72924fe41735"
+  integrity sha512-saq44U5bDO5z7BNWVeBdyY37BTPOQTeuz7Tm3kyywMEDHhZKw9BhtCo/QodTndoofRSRWXfE7MI2/AEvG/1x+g==
