@@ -1,21 +1,18 @@
 <script setup>
 
-import { YNetwork } from 'ynetwork';
+import axios from 'axios';
 
-const url = ref('https://google.com');
+const url = ref('http://api.ass-to-vtt.tech/');
 const loading = ref(false);
 const result = ref('');
 const others = ref({});
 
 async function makeRequest() {
-
   loading.value = true;
-  const { status, data: requestData, headers } = await YNetwork.get(url.value);
+  const { status, data: requestData, headers } = await axios.get(url.value);
   loading.value = false;
-
   result.value = requestData;
   others.value = { status, headers };
-
 }
 
 </script>

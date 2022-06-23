@@ -1,7 +1,7 @@
 {
-  "name": "vite-tauri-template",
-  "version": "1.2.0",
-  "description": "Vite + Tauri + Vue 3 + Vuetify 3 desktop app template",
+  "name": "Kamyroll",
+  "version": "0.0.1",
+  "description": "WebApp for kamyroll",
   "keywords": [
     "vite",
     "tauri",
@@ -18,9 +18,14 @@
     "build": "VITE_HTTP_HANDLER=NATIVE vite build && tauri build"
   },
   "dependencies": {
+    "@egoist/vue-emotion": "^0.6.2",
+    "@emotion/core": "^11.0.0",
+    "@emotion/styled": "^11.9.3",
     "@mdi/font": "6.7.96",
     "@tauri-apps/api": "1.0.0-beta.8",
+    "axios": "^0.27.2",
     "roboto-fontface": "0.10.0",
+    "twin.macro": "^2.8.2",
     "vue": "3.2.36",
     "vue-global-api": "0.4.1",
     "vue-router": "4.0.15",
@@ -31,8 +36,11 @@
     "@tauri-apps/cli": "1.0.0-beta.10",
     "@vitejs/plugin-vue": "2.3.3",
     "@vuetify/vite-plugin": "1.0.0-alpha.11",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
     "sass": "1.51.0",
     "sass-loader": "13.0.0",
+    "tailwindcss": "^3.1.2",
     "vite": "2.9.9"
   },
   "repository": {

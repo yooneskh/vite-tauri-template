@@ -10,7 +10,7 @@ const color = ref('lightblue');
 
       Change the color: <input type="text" v-model="color" class="pa-1 rounded" />
 
-      <div class="box pa-12 mt-3 rounded" />
+      <div class="box pa-12 mt-3 rounded"/>
 
     </v-card-text>
   </v-card>

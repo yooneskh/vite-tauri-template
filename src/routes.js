@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import HomePage from './pages/home/home-page.vue';
+import List from './pages/contact/list-page.vue';
+import Anime from './pages/anime/info-page.vue';
+
 
 
 export default createRouter({
@@ -11,8 +14,12 @@ export default createRouter({
       component: HomePage
     },
     {
-      path: '/about-us',
-      component: () => import('./pages/about/about-us-page.vue' /* webpackChunkName: "about-us-page" */)
+      path: '/liste',
+      component: List
+    },
+    {
+      path: '/anime',
+      component: Anime
     }
   ]
 });
