@@ -5,7 +5,6 @@ import routes from './routes';
 import App from './app.vue';
 import './assets/main.css';
 
-import './plugins/configure-ynetwork';
 
 import 'vue-global-api/ref';
 import 'vue-global-api/reactive';

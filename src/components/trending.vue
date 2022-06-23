@@ -62,7 +62,9 @@ console.log(trending);
 <template>
 <div class="trending">
     <v-card v-for="item in trending">
-        <v-card-text>
+        <v-card-text style="
+    opacity: 1;
+">
             <v-row>
                 <v-col cols="2">
                     <img :src="item.image" :alt="item.title" class="rounded-3xl shadow-lg" />
@@ -71,7 +73,7 @@ console.log(trending);
                     <h1 class="text-3xl font-bold">
                         {{item.title}}
                     </h1>
-                    <p class ="text-black-400 max-h-40 overflow-y-hidden">
+                    <p class="text-black-400 max-h-40 overflow-y-hidden">
                         {{item.description}}
                     </p>
                     <v-btn color="primary" :to="'/anime/'+item.slug" class="mt-3">
