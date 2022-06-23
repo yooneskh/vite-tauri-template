@@ -73,7 +73,7 @@ console.log(trending);
                     <h1 class="text-3xl font-bold">
                         {{item.title}}
                     </h1>
-                    <p class="text-black-400 max-h-40 overflow-y-hidden">
+                    <p class ="text-black-400 max-h-40 overflow-y-hidden">
                         {{item.description}}
                     </p>
                     <v-btn color="primary" :to="'/anime/'+item.slug" class="mt-3">

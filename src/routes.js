@@ -18,8 +18,8 @@ export default createRouter({
       component: List
     },
     {
-      path: '/anime',
+      path: '/anime/:id',
       component: Anime
-    }
+    },
   ]
 });
