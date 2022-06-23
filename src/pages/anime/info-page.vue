@@ -59,64 +59,11 @@ console.log(meta);
 
 <template>
     <banner></banner>
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">{{ meta.title }}</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <img :src="meta.image" class="img-fluid">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p>{{ meta.description }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p>{{ meta.rating }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p>{{ meta.episodes }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p>{{ meta.status }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p>{{ meta.aired }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p>{{ meta.aired_start }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p>{{ meta.aired_end }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p>{{ meta.type }}</p>
-            </div>
-        </div>
-    </div> -->
-    <!-- tailwind container -->
     <div class="info page"
       :style="{ 'backgroundImage': `url(${meta.image})`, 'backgroundPosition': 'center', 'backgroundRepeat': 'no-repeat', 'backgroundSize': 'cover', 'backgroundAttachment': 'fixed'}">
       <div class="backdrop-blur-md inset-0-z-10">
         <div class="hero text-left px-8 text-white h-screen relative">
-          <v-row>
+          <v-row class ="kitsu_metadata">
             <v-col cols="3">
                     <img :src="meta.image" :alt="meta.title" class="rounded-3xl shadow-lg" />
             </v-col>
@@ -134,6 +81,27 @@ console.log(meta);
               </v-row>
             </v-col>
           </v-row>
+          <div class="episodes">
+            <h1 class="text-3xl font-bold pt-10">Episodes</h1>
+          <!-- <v-row v-for=" episode in episodes" class ="episodes">
+            <v-col cols="3">
+              <img :src="episode.image" :alt="episode.title" class="rounded-3xl shadow-lg" />
+            </v-col>
+            <v-col cols="9">
+              <v-row>
+                <v-col cols="12">
+                  <h1 class="text-3xl font-bold">{{ episode.title }}</h1>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12">
+                  <p class="text-xl">{{ episode.description }}</p>
+                  <p class="text-xl">{{ episode.rating }}</p>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row> -->
+          </div>
         </div>
       </div>
     </div>

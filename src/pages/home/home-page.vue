@@ -7,38 +7,42 @@ import { moduleExpression } from '@babel/types';
 import Banner from '../../components/banner.vue';
 // import Requester from '../../components/requester.vue';
 import Trending from '../../components/trending.vue';
+
  
 function toggleDarkMode() {
-   // check if dark mode is enabled
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        // if enabled, set to disabled
-        localStorage.setItem('darkMode', 'disabled');
-    } else {
-        // if disabled, set to enabled
-        localStorage.setItem('darkMode', 'enabled');
-    }
-    // if dark mode is enabled in the local storage, replace all the v-theme--dark by v-theme--light on all the divs
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        document.querySelectorAll('.v-theme--dark').forEach(div => {
-            div.classList.replace('v-theme--dark', 'v-theme--light');
+    if (document.querySelector('.toggle-dark-mode').dataset.boolean == 'false'){
+        // take all the elements with v-light in the class and change the class to v-dark
+        document.querySelectorAll('.v-theme--light').forEach(function(element){
+            //if the element is a button.toggle-dark-mode then change the text to toggle light mode back
+            element.classList.replace('v-theme--light', 'v-theme--dark')
+            if(element.classList.contains('toggle-dark-mode')){
+                element.innerHTML = 'Toggle Light Mode';
+                element.classList.replace('v-theme--dark', 'v-theme--light');
+            }
         });
+        document.querySelector('.toggle-dark-mode').dataset.boolean = true;
+        localStorage.setItem('darkMode', 'true');
     } else {
-        // if dark mode is disabled in the local storage, replace all the v-theme--light by v-theme--dark on all the divs
-        document.querySelectorAll('.v-theme--light').forEach(div => {
-            div.classList.replace('v-theme--light', 'v-theme--dark');
+        // change all the v-dark to v-light and set the data-boolean to false
+        document.querySelectorAll('.v-theme--dark').forEach(function(element){
+            element.classList.replace('v-theme--dark', 'v-theme--light');
+            if(element.classList.contains('toggle-dark-mode')){
+                element.innerText = 'Toggle Dark Mode';
+                element.classList.replace('v-theme--dark', 'v-theme--light');
+            }
         });
+        document.querySelector('.toggle-dark-mode').dataset.boolean = false
+        localStorage.setItem('darkMode', 'false');
     }
 }
-toggleDarkMode
-
-
 
 </script>
 
 <template>
     <banner></banner>
     <!-- <requester></requester> -->
+    <v-btn class ="toggle-dark-mode" @click="toggleDarkMode" data-boolean="false">Toggle Dark Mode</v-btn>
     <trending></trending>
-    <v-btn class ="toggle-dark-mode" @click="toggleDarkMode">Toggle Dark Mode</v-btn>
+    
 
 </template>
