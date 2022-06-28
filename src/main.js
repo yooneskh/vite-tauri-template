@@ -13,9 +13,9 @@ import 'vue-global-api/watch';
 import 'vue-global-api/watchEffect';
 
 
+
 const app = createApp(App);
 
 app.use(routes);
 app.use(vuetify);
-
 app.mount('#app');

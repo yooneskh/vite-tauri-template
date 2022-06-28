@@ -33,7 +33,7 @@
     "ynetwork": "3.0.6"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "1.0.0-beta.10",
+    "@tauri-apps/cli": "^1.0.0",
     "@vitejs/plugin-vue": "2.3.3",
     "@vuetify/vite-plugin": "1.0.0-alpha.11",
     "autoprefixer": "^10.4.7",

@@ -21,5 +21,9 @@ export default createRouter({
       path: '/anime/:id',
       component: Anime
     },
+    {
+      path:'/watch/:id',
+      component:Anime
+    }
   ]
 });

@@ -51,12 +51,7 @@ function getTrending() {
     }
     return array;
 }
-// [[PromiseResult]] for getTrending:
 var trending = getTrending();
-console.log(trending);
-
-
-
 </script>
 
 <template>

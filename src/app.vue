@@ -4,7 +4,7 @@
 
 <template>
   <v-app>
-    <v-main class="bg-grey-lighten-3">
+    <v-main class="bg-black-darken-3">
       <router-view />
     </v-main>
   </v-app>
