@@ -53,9 +53,6 @@ function getInfo(slug){
     var type = show.showType
     return new infoAnime(title, slug, url, image, description, rating, episodes, status, aired, aired_start, aired_end,type);
 }
-var slug = window.location.href.split('/').pop();
-var meta = getInfo(slug);
-
 async function getToken() {
 
 
@@ -89,9 +86,32 @@ async function getToken() {
 //   console.log(test);
 // });
 
-async function getEpisodes(slug){
+async function getId(slug){
     var token = await getToken();
     const url = `https://kamyroll.herokuapp.com/content/v1/search?query=${slug}&limit=1&channel_id=crunchyroll`;
+    const response = await fetch(url, {
+        headers: {
+            'User-Agent': 'Kamyroll/3.17.0 Android/7.1.2 okhttp/4.9.1',
+            'Authorization': `Bearer ${token.access_token}`,
+        },
+        method: "GET",
+    });
+    let result = response.data;
+    console.log(JSON.stringify(result));
+    for(type of result.items){
+    for(anime of type.items){
+        if(anime.slug_title == slug){
+            return anime.id;
+        }
+    }
+}
+}
+async function getEpisodes(slug){
+    console.log(slug);
+    var id  = await getId(slug);
+    console.log(id);
+    var token = await getToken();
+    const url = `https://kamyroll.herokuapp.com/content/v1/seasons?id=${id}&channel_id=crunchyroll&locale=en-US`;
     console.log(url);
     const response = await fetch(url, {
         headers: {
@@ -101,11 +121,18 @@ async function getEpisodes(slug){
         method: "GET",
     });
     let result = response.data;
-    return {data: result};
+    return result;
 }
-getEpisodes(slug).then(result => {
-    console.log(result.data);
-});
+var slug = window.location.href.split('/').pop();
+var meta = getInfo(slug);
+getEpisodes(slug).then(result =>
+  console.log(result)
+);
+
+// getId(slug).then(result =>
+//   console.log(result)
+// );
+
 </script>
 
 <template>
