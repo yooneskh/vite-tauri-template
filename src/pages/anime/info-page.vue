@@ -3,6 +3,13 @@ import Banner from '../../components/banner.vue';
 import { fetch ,Body} from '@tauri-apps/api/http';
 
 
+// function Episode(title,url,description,headers){
+//   this.title = title;
+//   this.url = url;
+//   this.headers = headers;
+//   this.description = description;
+// }
+
 function getFile(url){
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, false);
@@ -53,31 +60,28 @@ function getInfo(slug){
     var type = show.showType
     return new infoAnime(title, slug, url, image, description, rating, episodes, status, aired, aired_start, aired_end,type);
 }
-async function getToken() {
+// async function getToken() {
 
 
-  const url = 'https://kamyroll.herokuapp.com/auth/v1/token';
-  const headers = {
-    'Authorization': 'Basic vrvluizpdr2eby+RjSKM17dOLacExxq1HAERdxQDO6+2pHvFHTKKnByPD7b6kZVe1dJXifb6SG5NWMz49ABgJA==',
-    'Content-Type': 'application/x-www-form-urlencoded',
-  };
-  try {
-    var body = Body.text('refresh_token=IV%2BFtTI%2BSYR0d5CQy2KOc6Q06S6aEVPIjZdWA6mmO7nDWrMr04cGjSkk4o6urP%2F6yDmE4yzccSX%2FrP%2FOIgDgK4ildzNf2G%2FpPS9Ze1XbEyJAEUyN%2BoKT7Gs1PhVTFdz%2FvYXvxp%2FoZmLWQGoGgSQLwgoRqnJddWjqk0ageUbgT1FwLazdL3iYYKdNN98BqGFbs%2Fbaeqqa8aFre5SzF%2F4G62y201uLnsElgd07OAh1bnJOy8PTNHpGqEBxxbo1VENqtYilG9ZKY18nEz8vLPQBbin%2FIIEjKITjSa%2BLvSDQt%2F0AaxCkhClNDUX2uUZ8q7fKuSDisJtEyIFDXtuZGFhaaA%3D%3D&grant_type=refresh_token&scope=offline_access')
-    const response = await fetch(url, {
-      method: "POST",
-      body: body,
-      headers: headers
+//   const url = 'https://kamyroll.herokuapp.com/auth/v1/token';
+//   const headers = {
+//     'Authorization': 'Basic vrvluizpdr2eby+RjSKM17dOLacExxq1HAERdxQDO6+2pHvFHTKKnByPD7b6kZVe1dJXifb6SG5NWMz49ABgJA==',
+//     'Content-Type': 'application/x-www-form-urlencoded',
+//   };
+//   try {
+//     var body = Body.text('refresh_token=IV%2BFtTI%2BSYR0d5CQy2KOc6Q06S6aEVPIjZdWA6mmO7nDWrMr04cGjSkk4o6urP%2F6yDmE4yzccSX%2FrP%2FOIgDgK4ildzNf2G%2FpPS9Ze1XbEyJAEUyN%2BoKT7Gs1PhVTFdz%2FvYXvxp%2FoZmLWQGoGgSQLwgoRqnJddWjqk0ageUbgT1FwLazdL3iYYKdNN98BqGFbs%2Fbaeqqa8aFre5SzF%2F4G62y201uLnsElgd07OAh1bnJOy8PTNHpGqEBxxbo1VENqtYilG9ZKY18nEz8vLPQBbin%2FIIEjKITjSa%2BLvSDQt%2F0AaxCkhClNDUX2uUZ8q7fKuSDisJtEyIFDXtuZGFhaaA%3D%3D&grant_type=refresh_token&scope=offline_access')
+//     const response = await fetch(url, {
+//       method: "POST",
+//       body: body,
+//       headers: headers
 
-    })
-    let result = response.data;
-
-
-    return result;
-
-  } catch (e) {
-    console.log(e);
-  }
-}
+//     })
+//     let result = response.data;
+//     return result;
+//   } catch (e) {
+//     console.log(e);
+//   }
+//   }
 // const json = new Promise(async (resolve, reject) => {
 //   const result = await getToken();
 //   resolve(result);
@@ -86,48 +90,63 @@ async function getToken() {
 //   console.log(test);
 // });
 
-async function getId(slug){
-    var token = await getToken();
-    const url = `https://kamyroll.herokuapp.com/content/v1/search?query=${slug}&limit=1&channel_id=crunchyroll`;
-    const response = await fetch(url, {
-        headers: {
-            'User-Agent': 'Kamyroll/3.17.0 Android/7.1.2 okhttp/4.9.1',
-            'Authorization': `Bearer ${token.access_token}`,
-        },
-        method: "GET",
-    });
-    let result = response.data;
-    console.log(JSON.stringify(result));
-    for(type of result.items){
-    for(anime of type.items){
-        if(anime.slug_title == slug){
-            return anime.id;
-        }
-    }
-}
-}
-async function getEpisodes(slug){
-    console.log(slug);
-    var id  = await getId(slug);
-    console.log(id);
-    var token = await getToken();
-    const url = `https://kamyroll.herokuapp.com/content/v1/seasons?id=${id}&channel_id=crunchyroll&locale=en-US`;
-    console.log(url);
-    const response = await fetch(url, {
-        headers: {
-            'User-Agent': 'Kamyroll/3.17.0 Android/7.1.2 okhttp/4.9.1',
-            'Authorization': `Bearer ${token.access_token}`,
-        },
-        method: "GET",
-    });
-    let result = response.data;
-    return result;
-}
-var slug = window.location.href.split('/').pop();
-var meta = getInfo(slug);
-getEpisodes(slug).then(result =>
-  console.log(result)
-);
+// async function getId(slug) {
+//   var type = '';
+//   var anime = '';
+//   var token = await getToken();
+//   const url = `https://kamyroll.herokuapp.com/content/v1/search?query=${slug}&limit=1&channel_id=crunchyroll`;
+//   const response = await fetch(url, {
+//     headers: {
+//       'User-Agent': 'Kamyroll/3.17.0 Android/7.1.2 okhttp/4.9.1',
+//       'Authorization': `Bearer ${token.access_token}`,
+//     },
+//     method: "GET",
+//   });
+//   let result = response.data;
+//   for (type of result.items) {
+//     for (anime of type.items) {
+//       if (anime.slug_title == slug) {
+//         return anime.id;
+//       }
+//     }
+//   }
+// }
+
+// async function getEpisodes(slug){
+//     var season = '';
+//     var epi=' ';
+//     var episodes = [];
+//     var id  = await getId(slug);
+//     console.log(id);
+//     var token = await getToken();
+//     const url = `https://kamyroll.herokuapp.com/content/v1/seasons?id=${id}&channel_id=crunchyroll&locale=en-US`;
+//     const options =  {
+//         headers: {
+//             'User-Agent': 'Kamyroll/3.17.0 Android/7.1.2 okhttp/4.9.1',
+//             'Authorization': `Bearer ${token.access_token}`,
+//         },
+//         method: "GET",
+//     }
+//     const response = await fetch(url,options);
+//     let result = response.data;
+//     if(url.includes('seasons')){
+//       for(season of result.items){
+//         for(epi of season.episodes){
+//             var titre = epi.title;
+//             var id = epi.id;
+//             var desc = epi.description;
+//             var link = 'https://kamyroll.herokuapp.com/videos/v1/streams?id=' + id + '&channel_id=crunchyroll&locale=en-US';
+//             episodes.push(new Episode(titre,link,desc,options));
+//         }
+//     }
+//     console.log(episodes)
+//     return episodes
+//     }
+    
+// }
+const slug = window.location.href.split('/').pop();
+const meta = getInfo(slug);
+// let episodes = await getEpisodes(slug);
 
 // getId(slug).then(result =>
 //   console.log(result)
@@ -161,29 +180,113 @@ getEpisodes(slug).then(result =>
           </v-row>
           <div class="episodes">
             <h1 class="text-3xl font-bold pt-10">Episodes</h1>
-          <!-- <v-row v-for=" episode in episodes" class ="episodes">
+          <v-row v-for=" episode in episodes" class ="episodes">
             <v-col cols="3">
-              <img :src="episode.image" :alt="episode.title" class="rounded-3xl shadow-lg" />
+              <img :src="meta.image" :alt="episode.title" class="rounded-t-lg" />
             </v-col>
             <v-col cols="9">
               <v-row>
                 <v-col cols="12">
-                  <h1 class="text-3xl font-bold">{{ episode.title }}</h1>
+                  <h1 class="text-gray-900 text-xl font-medium mb-2">{{ episode.title }}</h1>
                 </v-col>
               </v-row>
               <v-row>
                 <v-col cols="12">
                   <p class="text-xl">{{ episode.description }}</p>
-                  <p class="text-xl">{{ episode.rating }}</p>
                 </v-col>
               </v-row>
             </v-col>
-          </v-row> -->
+          </v-row>
           </div>
         </div>
       </div>
     </div>
 </template>
 <script>
+export default {
+  data () {
+    return {
+      episodes: null,
+    }
+  },
+  async mounted () {
+    function Episode(title, url, description, headers) {
+      this.title = title;
+      this.url = url;
+      this.headers = headers;
+      this.description = description;
+    }
+    async function getToken() {
+      const url = 'https://kamyroll.herokuapp.com/auth/v1/token';
+      const headers = {
+        'Authorization': 'Basic vrvluizpdr2eby+RjSKM17dOLacExxq1HAERdxQDO6+2pHvFHTKKnByPD7b6kZVe1dJXifb6SG5NWMz49ABgJA==',
+        'Content-Type': 'application/x-www-form-urlencoded',
+      };
+      try {
+        var body = Body.text('refresh_token=IV%2BFtTI%2BSYR0d5CQy2KOc6Q06S6aEVPIjZdWA6mmO7nDWrMr04cGjSkk4o6urP%2F6yDmE4yzccSX%2FrP%2FOIgDgK4ildzNf2G%2FpPS9Ze1XbEyJAEUyN%2BoKT7Gs1PhVTFdz%2FvYXvxp%2FoZmLWQGoGgSQLwgoRqnJddWjqk0ageUbgT1FwLazdL3iYYKdNN98BqGFbs%2Fbaeqqa8aFre5SzF%2F4G62y201uLnsElgd07OAh1bnJOy8PTNHpGqEBxxbo1VENqtYilG9ZKY18nEz8vLPQBbin%2FIIEjKITjSa%2BLvSDQt%2F0AaxCkhClNDUX2uUZ8q7fKuSDisJtEyIFDXtuZGFhaaA%3D%3D&grant_type=refresh_token&scope=offline_access')
+        const response = await fetch(url, {
+          method: "POST",
+          body: body,
+          headers: headers
+
+        })
+        let result = response.data;
+        return result;
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    async function getId(slug) {
+      var type = '';
+      var anime = '';
+      var token = await getToken();
+      const url = `https://kamyroll.herokuapp.com/content/v1/search?query=${slug}&limit=1&channel_id=crunchyroll`;
+      const response = await fetch(url, {
+        headers: {
+          'User-Agent': 'Kamyroll/3.17.0 Android/7.1.2 okhttp/4.9.1',
+          'Authorization': `Bearer ${token.access_token}`,
+        },
+        method: "GET",
+      });
+      let result = response.data;
+      for (type of result.items) {
+        for (anime of type.items) {
+          if (anime.slug_title == slug) {
+            return anime.id;
+          }
+        }
+      }
+    }
+    var season = '';
+    var epi=' ';
+    var episodes = [];
+    var id  = await getId(window.location.href.split('/').pop());
+    console.log(id);
+    var token = await getToken();
+    const url = `https://kamyroll.herokuapp.com/content/v1/seasons?id=${id}&channel_id=crunchyroll&locale=en-US`;
+    const options =  {
+        headers: {
+            'User-Agent': 'Kamyroll/3.17.0 Android/7.1.2 okhttp/4.9.1',
+            'Authorization': `Bearer ${token.access_token}`,
+        },
+        method: "GET",
+    }
+    const response = await fetch(url,options);
+    let result = response.data;
+    if(url.includes('seasons')){
+      for(season of result.items){
+        for(epi of season.episodes){
+            var titre = epi.title;
+            var id = epi.id;
+            var desc = epi.description;
+            var link = 'https://kamyroll.herokuapp.com/videos/v1/streams?id=' + id + '&channel_id=crunchyroll&locale=en-US';
+            episodes.push(new Episode(titre,link,desc,options));
+        }
+    }
+    console.log(episodes);
+    this.episodes = episodes
+    }
+  },
+}
 
 </script>
