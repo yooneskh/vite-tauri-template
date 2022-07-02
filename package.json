@@ -22,7 +22,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.9.3",
     "@mdi/font": "6.7.96",
-    "@tauri-apps/api": "1.0.0-beta.8",
+    "@tauri-apps/api": "^1.0.1",
     "axios": "^0.27.2",
     "roboto-fontface": "0.10.0",
     "twin.macro": "^2.8.2",
@@ -33,7 +33,7 @@
     "ynetwork": "3.0.6"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.0.0",
+    "@tauri-apps/cli": "^1.0.2",
     "@vitejs/plugin-vue": "2.3.3",
     "@vuetify/vite-plugin": "1.0.0-alpha.11",
     "autoprefixer": "^10.4.7",

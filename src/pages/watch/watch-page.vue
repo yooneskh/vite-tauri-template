@@ -1,0 +1,101 @@
+<script setup>
+    import Banner from '../../components/banner.vue';
+    import { fetch ,Body} from '@tauri-apps/api/http';
+
+</script>
+
+<template>
+    <banner></banner>
+    <v-container class="page text-center">
+        <p>{{videos}}</p>
+    </v-container>
+
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+           videos: [null]
+        }
+    },
+    async mounted() {
+    function Videos(quality,link,subs){
+        this.quality = quality;
+        this.link = link;
+        this.subs = subs;
+    }
+    function ModuleRequest(link, headers) {
+      this.link = link;
+      this.headers = headers;
+    }
+    function Subs(lang,link){
+        this.lang = lang;
+        this.link = link;
+    }
+    async function getToken() {
+      const url = 'https://kamyroll.herokuapp.com/auth/v1/token';
+      const headers = {
+        'Authorization': 'Basic vrvluizpdr2eby+RjSKM17dOLacExxq1HAERdxQDO6+2pHvFHTKKnByPD7b6kZVe1dJXifb6SG5NWMz49ABgJA==',
+        'Content-Type': 'application/x-www-form-urlencoded',
+      };
+      try {
+        var body = Body.text('refresh_token=IV%2BFtTI%2BSYR0d5CQy2KOc6Q06S6aEVPIjZdWA6mmO7nDWrMr04cGjSkk4o6urP%2F6yDmE4yzccSX%2FrP%2FOIgDgK4ildzNf2G%2FpPS9Ze1XbEyJAEUyN%2BoKT7Gs1PhVTFdz%2FvYXvxp%2FoZmLWQGoGgSQLwgoRqnJddWjqk0ageUbgT1FwLazdL3iYYKdNN98BqGFbs%2Fbaeqqa8aFre5SzF%2F4G62y201uLnsElgd07OAh1bnJOy8PTNHpGqEBxxbo1VENqtYilG9ZKY18nEz8vLPQBbin%2FIIEjKITjSa%2BLvSDQt%2F0AaxCkhClNDUX2uUZ8q7fKuSDisJtEyIFDXtuZGFhaaA%3D%3D&grant_type=refresh_token&scope=offline_access')
+        const response = await fetch(url, {
+          method: "POST",
+          body: body,
+          headers: headers
+
+        })
+        console.log(response);
+        let result = response.data;
+        console.log(result);
+        return result;
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    async function getVideos(id) {
+        let videos = [];
+        var streams = '';
+        var subs = '';
+        const url = 'https://kamyroll.herokuapp.com/videos/v1/streams?channel_id=crunchyroll&id='+id+'&locale=en-US&type=adaptive_hls';
+        var token = await getToken();
+        const headers = {
+          'Authorization': 'Bearer ' + token.access_token,
+          'Content-Type': 'application/x-www-form-urlencoded',
+        };
+        try {
+          const response = await fetch(url, {
+            method: "GET",
+            headers: headers
+          })
+          console.log(response);
+          let result = response.data;
+          const emptyHeaders = null;
+          for(streams of result.streams){
+            var quality = streams.audio_locale + ' ' + streams.hardsub_locale;
+            var link = streams.url;
+            link = new ModuleRequest(link, emptyHeaders);
+            if(streams.hardsub_locale != ''){
+                videos.push(new Videos(quality,link,null));
+            } else {
+                for(subs of result.subtitles){
+                    var lang = subs.locale;
+                    var link = subs.url;
+                    link = new ModuleRequest(link, emptyHeaders);
+                    videos.push(new Videos(quality,link,new Subs(lang,link)));
+                }
+            }
+          }
+          console.log(videos);
+          return videos;
+        } catch (e) {
+          console.log(e);
+        }
+    }
+        var streams = await getVideos(window.location.href.split('/').pop());
+        this.videos = streams;
+    }
+}
+</script>

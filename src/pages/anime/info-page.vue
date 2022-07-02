@@ -155,52 +155,56 @@ const meta = getInfo(slug);
 </script>
 
 <template>
-    <banner></banner>
-    <div class="info page"
-      :style="{ 'backgroundImage': `url(${meta.image})`, 'backgroundPosition': 'center', 'backgroundRepeat': 'no-repeat', 'backgroundSize': 'cover', 'backgroundAttachment': 'fixed','padding-top':'10px'}">
-      <div class="backdrop-blur-md">
-        <div class="hero text-left px-8 text-white h-screen relative">
-          <v-row class ="kitsu_metadata">
-            <v-col cols="3">
-                    <img :src="meta.image" :alt="meta.title" class="rounded-3xl shadow-lg" />
-            </v-col>
-            <v-col cols="9">
-              <v-row>
-                <v-col cols="12">
-                  <h1 class="text-3xl font-bold">{{ meta.title }}</h1>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col cols="12">
-                  <p class="text-xl">{{ meta.description }}</p>
-                  <p class="text-xl">{{ meta.rating }}</p>
-                </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
-          <div class="episodes">
-            <h1 class="text-3xl font-bold pt-10">Episodes</h1>
-          <v-row v-for=" episode in episodes" class ="episodes">
-            <v-col cols="3">
-              <img :src="meta.image" :alt="episode.title" class="rounded-t-lg" />
-            </v-col>
-            <v-col cols="9">
-              <v-row>
-                <v-col cols="12">
-                  <h1 class="text-gray-900 text-xl font-medium mb-2">{{ episode.title }}</h1>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col cols="12">
-                  <p class="text-xl">{{ episode.description }}</p>
-                </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
+  <banner></banner>
+  <div class="info page"
+    :style="{ 'backgroundImage': `url(${meta.image})`, 'backgroundPosition': 'center', 'backgroundRepeat': 'repeat', 'backgroundSize': 'cover','padding-top':'10px'}">
+    <div class="backdrop-blur-md">
+      <div class="hero text-left px-8 text-white h-screen relative">
+        <v-row class="kitsu_metadata">
+          <v-col cols="3">
+            <img :src="meta.image" :alt="meta.title" class="rounded-3xl shadow-lg" />
+          </v-col>
+          <v-col cols="9">
+            <v-row>
+              <v-col cols="12">
+                <h1 class="text-3xl font-bold">{{ meta.title }}</h1>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12">
+                <p class="text-xl">{{ meta.description }}</p>
+                <p class="text-xl">{{ meta.rating }}</p>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+        <div class="episodes">
+          <h1 class="text-3xl font-bold pt-10">Episodes</h1>
+          <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 flex justify-center">
+            <div v-for=" episode in episodes"
+              class="rounded-lg shadow-lg bg-white max-w-sm">
+              <img class="rounded-t-lg"
+                :src="episode.poster" :alt="episode.title" />
+              <div class="p-6">
+                <h5 class="text-gray-900 text-xl font-medium mb-2">{{ episode.title }}</h5>
+                <p class="text-gray-700 text-base mb-4">{{ episode.description }}</p>
+                <a :href="episode.url.link"
+                  class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Watch Video
+                  <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 <script>
 export default {
@@ -210,11 +214,16 @@ export default {
     }
   },
   async mounted () {
-    function Episode(title, url, description, headers) {
+    function Episode(title, url, description,poster) {
       this.title = title;
       this.url = url;
-      this.headers = headers;
       this.description = description;
+      this.poster = poster;
+    }
+
+    function ModuleRequest(link, headers) {
+      this.link = link;
+      this.headers = headers;
     }
     async function getToken() {
       const url = 'https://kamyroll.herokuapp.com/auth/v1/token';
@@ -230,17 +239,20 @@ export default {
           headers: headers
 
         })
+        console.log(response);
         let result = response.data;
+        console.log(result);
         return result;
       } catch (e) {
         console.log(e);
       }
     }
     async function getId(slug) {
+      console.log(slug);
       var type = '';
       var anime = '';
       var token = await getToken();
-      const url = `https://kamyroll.herokuapp.com/content/v1/search?query=${slug}&limit=1&channel_id=crunchyroll`;
+      const url = `https://kamyroll.herokuapp.com/content/v1/search?query=${slug}&limit=35&channel_id=crunchyroll`;
       const response = await fetch(url, {
         headers: {
           'User-Agent': 'Kamyroll/3.17.0 Android/7.1.2 okhttp/4.9.1',
@@ -251,8 +263,10 @@ export default {
       let result = response.data;
       for (type of result.items) {
         for (anime of type.items) {
-          if (anime.slug_title == slug) {
+          if (slug.includes(anime.slug_title)) {
             return anime.id;
+          } else {
+            console.log('not found');
           }
         }
       }
@@ -273,14 +287,21 @@ export default {
     }
     const response = await fetch(url,options);
     let result = response.data;
+    console.log(result)
     if(url.includes('seasons')){
       for(season of result.items){
         for(epi of season.episodes){
             var titre = epi.title;
             var id = epi.id;
             var desc = epi.description;
-            var link = 'https://kamyroll.herokuapp.com/videos/v1/streams?id=' + id + '&channel_id=crunchyroll&locale=en-US';
-            episodes.push(new Episode(titre,link,desc,options));
+            var image = epi.images.thumbnail[2].source;
+            var link = 'http://localhost:8080/watch/series/' + id;
+            var headers = {
+                'User-Agent': 'Kamyroll/3.17.0 Android/7.1.2 okhttp/4.9.1',
+                'Authorization': `Bearer ${token.access_token}`,
+            };
+            link = new ModuleRequest(link, headers);
+            episodes.push(new Episode(titre,link,desc,image));
         }
     }
     console.log(episodes);
@@ -288,5 +309,4 @@ export default {
     }
   },
 }
-
 </script>
