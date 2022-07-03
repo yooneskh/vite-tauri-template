@@ -157,9 +157,9 @@ const meta = getInfo(slug);
 <template class="bg-gray-800">
   <banner></banner>
   <div class="info page"
-    :style="{ 'backgroundImage': `url(${meta.image})`, 'backgroundPosition': 'center', 'backgroundRepeat': 'repeat', 'backgroundSize': 'cover','padding-top':'10px'}">
+    :style="{ 'backgroundImage': `url(${meta.image})`, 'backgroundPosition': 'center', 'backgroundRepeat': 'no-repeat', 'backgroundSize': 'cover','padding-top':'10px'}">
     <div class="backdrop-blur-md">
-      <div class="hero text-left px-8 text-white h-screen relative">
+      <div class="hero text-left px-8 text-white relative">
         <v-row class="kitsu_metadata">
           <v-col cols="3">
             <img :src="meta.image" :alt="meta.title" class="rounded-3xl shadow-lg" />
