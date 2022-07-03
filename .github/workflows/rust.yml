@@ -1,0 +1,17 @@
+- name: tauri-build
+  # You may pin to the exact commit or the version.
+  # uses: JonasKruckenberg/tauri-build@8a087c972f70b1f8687fa6de1128b018aa6e9f8d
+  uses: JonasKruckenberg/tauri-build@v1.0.2
+  with:
+    # Binary to use to build the application
+    runner: # optional
+    # Additional arguments for the build command
+    args: # optional
+    # Path to the root of the project
+    projectPath: # optional
+    # Path to the tauri.conf.json file if you want a configuration different from the default one
+    configPath: # optional
+    # The target triple to build against
+    target: # optional
+    # Builds with the debug flag
+    debug: # optional
