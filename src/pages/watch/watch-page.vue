@@ -1,22 +1,41 @@
 <script setup>
     import Banner from '../../components/banner.vue';
     import { fetch ,Body} from '@tauri-apps/api/http';
-
 </script>
 
 <template>
-    <banner></banner>
-    <v-container class="page text-center">
-        <p>{{videos}}</p>
-    </v-container>
+  <banner></banner>
+  <div class="player" v-for="video of videos">
+    <video
+      id="vid1"
+      width="1280"
+      height="720"
+      class="video-js"
+      preload="false"
+      controls
+      data-setup="{}"
+    >
+      <source :src="video.link.link" type="application/x-mpegURL"/>
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">
+          supports HTML5 video
+        </a>
+      </p>
+    </video>
 
+
+  </div>
+  
 </template>
+ 
 
 <script>
 export default {
     data() {
         return {
-           videos: [null]
+           videos: null
         }
     },
     async mounted() {
@@ -59,7 +78,7 @@ export default {
         let videos = [];
         var streams = '';
         var subs = '';
-        const url = 'https://kamyroll.herokuapp.com/videos/v1/streams?channel_id=crunchyroll&id='+id+'&locale=en-US&type=adaptive_hls';
+        const url = 'https://kamyroll.herokuapp.com/videos/v1/streams?channel_id=crunchyroll&id='+id+'&locale=en-US&type=adaptive_hls&format=vtt';
         var token = await getToken();
         const headers = {
           'Authorization': 'Bearer ' + token.access_token,
@@ -82,20 +101,60 @@ export default {
             } else {
                 for(subs of result.subtitles){
                     var lang = subs.locale;
-                    var link = subs.url;
+                    var subslink = subs.url;
                     link = new ModuleRequest(link, emptyHeaders);
-                    videos.push(new Videos(quality,link,new Subs(lang,link)));
+                    videos.push(new Videos(quality,link,new Subs(lang,subslink)));
                 }
             }
           }
-          console.log(videos);
           return videos;
         } catch (e) {
           console.log(e);
         }
     }
         var streams = await getVideos(window.location.href.split('/').pop());
+        console.log(streams)
         this.videos = streams;
     }
 }
 </script>
+<!-- <template>
+  <div class="hello">
+    **<video
+      id="vid1"
+      width="500"
+      height="300"
+      class="video-js"
+      preload="auto"
+      poster="//vjs.zencdn.net/v/oceans.png"
+      controls
+      data-setup="{}"
+    >
+      <source src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8" type="application/x-mpegURL"/>
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">
+          supports HTML5 video
+        </a>
+      </p>
+    </video>
+  </div>
+</template>
+
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style> -->
