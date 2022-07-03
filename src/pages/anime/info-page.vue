@@ -154,7 +154,7 @@ const meta = getInfo(slug);
 
 </script>
 
-<template>
+<template class="bg-gray-800">
   <banner></banner>
   <div class="info page"
     :style="{ 'backgroundImage': `url(${meta.image})`, 'backgroundPosition': 'center', 'backgroundRepeat': 'repeat', 'backgroundSize': 'cover','padding-top':'10px'}">
