@@ -6,6 +6,7 @@
 <template>
   <banner></banner>
   <div class="player" v-for="video of videos">
+  {{video.quality}}
     <video
       id="vid1"
       width="1280"
@@ -96,14 +97,18 @@ export default {
             var quality = streams.audio_locale + ' ' + streams.hardsub_locale;
             var link = streams.url;
             link = new ModuleRequest(link, emptyHeaders);
-            if(streams.hardsub_locale != ''){
+            console.log(quality.split(' ')[1])
+            if(quality.split(' ')[1] == 'en-US' || quality.split(' ')[1] == 'fr-FR'){
+                console.log('here 0');
                 videos.push(new Videos(quality,link,null));
-            } else {
+                continue;
+            } else if(!quality.split(' ')[1]) {
                 for(subs of result.subtitles){
                     var lang = subs.locale;
-                    var subslink = subs.url;
-                    link = new ModuleRequest(link, emptyHeaders);
-                    videos.push(new Videos(quality,link,new Subs(lang,subslink)));
+                    if(lang == 'en-US'){
+                      var subslink = subs.url;
+                      videos.push(new Videos(quality,link,new Subs(lang,subslink)));
+                    }
                 }
             }
           }
