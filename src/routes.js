@@ -26,6 +26,8 @@ export default createRouter({
     {
       path:'/watch/:type/:id',
       component: Watch
-    }
+    },
+    { path: '/:pathMatch(.*)*',
+     component: Error }
   ]
 });

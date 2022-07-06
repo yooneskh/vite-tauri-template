@@ -1,11 +1,50 @@
 <script setup>
     import Banner from '../../components/banner.vue';
     import { fetch ,Body} from '@tauri-apps/api/http';
+import { onUnmounted, onUpdated } from 'vue';
+
+    function getValueFromKey(keys, key) {
+         for (var x = 0; x < keys.length; x++) {
+           let tKey = keys[x];
+           if (tKey.quality == key) {
+             return tKey.link.link;
+           }
+         }
+       }
+   
+    function getQuality(keys) {
+      let quality = [];
+      for (var x = 0; x < keys.length; x++) {
+        let tKey = keys[x];
+        quality.push(tKey.quality);
+      }
+      return quality;
+    }
+
 </script>
 
-<template>
+<template #fallback>
   <banner></banner>
-  <div class="player" v-for="video of videos">
+  <select>
+    <option v-for="video in videos">
+      {{ video.quality }}
+    </option>
+  </select>
+  <!--load the video quality that's registred in the selection-->
+  <div class="player">
+  <video id="video-js" controls preload="auto" data-setup="{}" class="vjs-default-skin" width="640" height="480">
+  <source :src="getValueFromKey(videos,lang)" type="application/x-mpegURL"/>
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">
+          supports HTML5 video
+        </a>
+      </p>
+  </video>
+  </div>
+  
+  <!-- <div class="player" v-for="video of videos">
   {{video.quality}}
     <video
       id="vid1"
@@ -16,30 +55,23 @@
       controls
       data-setup="{}"
     >
-      <source :src="video.link.link" type="application/x-mpegURL"/>
-      <p class="vjs-no-js">
-        To view this video please enable JavaScript, and consider upgrading to a
-        web browser that
-        <a href="http://videojs.com/html5-video-support/" target="_blank">
-          supports HTML5 video
-        </a>
-      </p>
+      
     </video>
-
-
-  </div>
+  </div> -->
   
 </template>
  
 
 <script>
 export default {
+  
     data() {
         return {
-           videos: null
+           videos: null,
+           lang: 'ja-JP fr-FR'
         }
     },
-    async mounted() {
+    created: async function() {
     function Videos(quality,link,subs){
         this.quality = quality;
         this.link = link;
@@ -53,6 +85,7 @@ export default {
         this.lang = lang;
         this.link = link;
     }
+     
     async function getToken() {
       const url = 'https://kamyroll.herokuapp.com/auth/v1/token';
       const headers = {
@@ -67,9 +100,9 @@ export default {
           headers: headers
 
         })
-        console.log(response);
+        ;
         let result = response.data;
-        console.log(result);
+        ;
         return result;
       } catch (e) {
         console.log(e);
@@ -90,16 +123,16 @@ export default {
             method: "GET",
             headers: headers
           })
-          console.log(response);
+          ;
           let result = response.data;
           const emptyHeaders = null;
           for(streams of result.streams){
             var quality = streams.audio_locale + ' ' + streams.hardsub_locale;
             var link = streams.url;
             link = new ModuleRequest(link, emptyHeaders);
-            console.log(quality.split(' ')[1])
+            
             if(quality.split(' ')[1] == 'en-US' || quality.split(' ')[1] == 'fr-FR'){
-                console.log('here 0');
+                
                 videos.push(new Videos(quality,link,null));
                 continue;
             } else if(!quality.split(' ')[1]) {
@@ -114,12 +147,24 @@ export default {
           }
           return videos;
         } catch (e) {
-          console.log(e);
+          ;
         }
     }
         var streams = await getVideos(window.location.href.split('/').pop());
-        console.log(streams)
         this.videos = streams;
+    },
+    async mounted() {
+      var video = document.getElementById('video-js');
+      video.addEventListener('loadedmetadata', function() {
+        video.play();
+      });
+      // var select = document.querySelector('select');
+      // select.addEventListener('change', function() {
+      //   var quality = 'ja-JP en-US';
+      //   var video = document.querySelector('source').src;
+      //   video.src = getValueFromKey(this.videos,quality);
+      //   video.play();
+      // });
     }
 }
 </script>
@@ -146,20 +191,14 @@ export default {
     </video>
   </div>
 </template>
+ -->
 
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+select {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #fff;
+  outline-color: white;
+  outline-width: 1px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style> -->
+</style>
