@@ -15,7 +15,7 @@
     "vite-plugin-vuetify": "1.0.0-alpha.12"
   },
   "dependencies": {
-    "@mdi/font": "6.7.96",
+    "@mdi/font": "6.9.96",
     "roboto-fontface": "0.10.0",
     "vue": "3.2.37",
     "vuetify": "3.0.0-beta.4"
