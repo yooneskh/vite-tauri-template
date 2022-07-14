@@ -39,21 +39,3 @@ jobs:
         with:
           tagName: v__VERSION__
           releaseName: v__VERSION__
-  update:
-    needs: release
-    runs-on: macos-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-
-      - run: yarn
-
-      - name: Create Update
-        run: yarn update
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
