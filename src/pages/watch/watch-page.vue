@@ -1,25 +1,10 @@
 <script setup>
     import Banner from '../../components/banner.vue';
     import { fetch ,Body} from '@tauri-apps/api/http';
-import { onUnmounted, onUpdated } from 'vue';
+    import { onUnmounted, onUpdated } from 'vue';
 
-    function getValueFromKey(keys, key) {
-         for (var x = 0; x < keys.length; x++) {
-           let tKey = keys[x];
-           if (tKey.quality == key) {
-             return tKey.link.link;
-           }
-         }
-       }
-   
-    function getQuality(keys) {
-      let quality = [];
-      for (var x = 0; x < keys.length; x++) {
-        let tKey = keys[x];
-        quality.push(tKey.quality);
-      }
-      return quality;
-    }
+  
+    
 
 </script>
 
@@ -70,6 +55,17 @@ export default {
            videos: null,
            lang: 'ja-JP fr-FR'
         }
+    },
+    methods:{
+      getQuality(keys) {
+        let quality = [];
+        for (var x = 0; x < keys.length; x++) {
+          let tKey = keys[x];
+          quality.push(tKey.quality);
+        }
+        return quality;
+      }
+      
     },
     created: async function() {
     function Videos(quality,link,subs){
