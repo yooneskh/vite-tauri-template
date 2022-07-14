@@ -15,7 +15,7 @@
     "serve:native": "VITE_HTTP_HANDLER=NATIVE vite --port 8080",
     "serve:tauri": "tauri dev",
     "build:web": "vite build",
-    "build": "VITE_HTTP_HANDLER=NATIVE vite build && tauri build"
+    "build": "vite build && tauri build"
   },
   "dependencies": {
     "@egoist/vue-emotion": "^0.6.2",
