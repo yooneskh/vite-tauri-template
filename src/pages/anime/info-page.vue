@@ -151,7 +151,6 @@ export default {
       }
     }
     async function getId(slug) {
-      console.log(slug);
       var type = '';
       var anime = '';
       var token = await getToken();
