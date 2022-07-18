@@ -1,4 +1,8 @@
 import { createApp } from 'vue';
+
+
+import './assets/styles/app.scss';
+import App from './app.vue';
 const app = createApp(App);
 
 
@@ -9,5 +13,4 @@ import { unifiedApp } from './plugins/unified/unified-app';
 app.use(unifiedApp);
 
 
-import App from './app.vue';
 app.mount('#app');

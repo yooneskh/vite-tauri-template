@@ -1,23 +1,33 @@
 {
-  "name": "vite-vuetify-template",
+  "name": "vite-tauri-template",
+  "description": "Vite + Tauri + Vuetify bundled together to use",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "serve": "vite",
-    "lint": "exit 0;",
-    "build": "vite build",
+    "serve:tauri": "VITE_NETWORK_PROCESSOR=tauri vite",
+    "serve:native": "tauri dev",
+    "build": "VITE_NETWORK_PROCESSOR=tauri vite build && tauri build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@mdi/font": "6.9.96",
+    "@tauri-apps/api": "1.0.2",
+    "roboto-fontface": "0.10.0",
+    "unified-network": "0.4.0",
+    "vue": "3.2.37",
+    "vuetify": "3.0.0-beta.5"
+  },
   "devDependencies": {
+    "@tauri-apps/cli": "1.0.4",
     "@vitejs/plugin-vue": "3.0.0",
     "sass": "1.53.0",
     "vite": "3.0.0",
     "vite-plugin-vuetify": "1.0.0-alpha.12"
   },
-  "dependencies": {
-    "@mdi/font": "6.9.96",
-    "roboto-fontface": "0.10.0",
-    "vue": "3.2.37",
-    "vuetify": "3.0.0-beta.5"
-  }
+  "main": "index.js",
+  "repository": "git@github.com:yooneskh/vite-vuetify-template.git",
+  "author": "Yoones Khoshghadam <yooneskh@gmail.com>",
+  "license": "MIT"
 }
