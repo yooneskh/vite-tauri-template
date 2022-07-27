@@ -5,7 +5,6 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "lint": "exit 0;",
     "serve": "vite",
     "serve:tauri": "VITE_NETWORK_PROCESSOR=tauri vite",
     "serve:native": "tauri dev",
