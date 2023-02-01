@@ -607,10 +607,10 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-unified-network@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/unified-network/-/unified-network-0.4.0.tgz#368fa8bb1026061524e89d13e6f0df7e434131f5"
-  integrity sha512-6ssF0YNF7l9w04a/17oedT2tCcWXe25pS5M+27E61QwQPHfCI5Uh2kJjoA0R8UumBMKbtJ4EGaRDMkRRN9V9+w==
+unified-network@0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/unified-network/-/unified-network-0.6.4.tgz#df326d1ad87ba71d2a5a45b99e15ef64588ba798"
+  integrity sha512-anCKOaBBARYf27j1Jcpr4NPsuE+Ydi2J9BjO5cmAwkUZWuww0/4i3Fb4dPtffv5FGC8gZ7iXxBQEctF3DYTpIA==
 
 upath@^2.0.1:
   version "2.0.1"
