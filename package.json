@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@mdi/font": "7.1.96",
-    "@tauri-apps/api": "1.0.2",
+    "@tauri-apps/api": "1.2.0",
     "roboto-fontface": "0.10.0",
     "unified-network": "0.4.0",
     "vue": "3.2.37",
