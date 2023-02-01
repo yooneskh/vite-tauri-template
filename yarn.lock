@@ -282,10 +282,10 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.37.tgz#8e6adc3f2759af52f0e85863dfb0b711ecc5c702"
   integrity sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==
 
-"@vuetify/loader-shared@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@vuetify/loader-shared/-/loader-shared-1.5.1.tgz#462057d6191f4e9a1d1877858186616b07ca8e3f"
-  integrity sha512-3Y1+v1DAi+kr2XRnTo5/o+SRPqrfBV0X0HoGtUUS2BVHKwXoj7cxOBE4zg6rWw7x+mBzDbgcum0zOj9HMx+LJQ==
+"@vuetify/loader-shared@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@vuetify/loader-shared/-/loader-shared-1.7.1.tgz#0f63a3d41b6df29a2db1ff438aa1819b237c37a3"
+  integrity sha512-kLUvuAed6RCvkeeTNJzuy14pqnkur8lTuner7v7pNE/kVhPR97TuyXwBSBMR1cJeiLiOfu6SF5XlCYbXByEx1g==
   dependencies:
     find-cache-dir "^3.3.2"
     upath "^2.0.1"
@@ -638,12 +638,12 @@ upath@^2.0.1:
   resolved "https://registry.yarnpkg.com/upath/-/upath-2.0.1.tgz#50c73dea68d6f6b990f51d279ce6081665d61a8b"
   integrity sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==
 
-vite-plugin-vuetify@1.0.0-alpha.14:
-  version "1.0.0-alpha.14"
-  resolved "https://registry.yarnpkg.com/vite-plugin-vuetify/-/vite-plugin-vuetify-1.0.0-alpha.14.tgz#5dc71f23daa3f84b7ea48f37d67e16a1f1f3e6f3"
-  integrity sha512-hYcxkj5iq9Ecgeddklowf6tvhik9TsVofvR3PisWZJT/eSSL36BUCFulg1vo2DQHJGC/SEaLOWzgRwDbkmwRyA==
+vite-plugin-vuetify@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vite-plugin-vuetify/-/vite-plugin-vuetify-1.0.2.tgz#d1777c63aa1b3a308756461b3d0299fd101ee8f4"
+  integrity sha512-MubIcKD33O8wtgQXlbEXE7ccTEpHZ8nPpe77y9Wy3my2MWw/PgehP9VqTp92BLqr0R1dSL970Lynvisx3UxBFw==
   dependencies:
-    "@vuetify/loader-shared" "^1.5.1"
+    "@vuetify/loader-shared" "^1.7.1"
     debug "^4.3.3"
     upath "^2.0.1"
 
