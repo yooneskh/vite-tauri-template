@@ -16,7 +16,10 @@ async function makeRequest() {
   result.value = '';
 
   loading.value = true;
-  const { status, data, headers } = await $http.get({ url: url.value });
+  const { status, data, headers } = await $http.request({
+    method: 'get',
+    url: url.value,
+  });
   loading.value = false;
   if (generalHandleHttp(status, data)) return;
 
