@@ -12,7 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mdi/font": "7.1.96",
+    "@mdi/font": "7.2.96",
     "@tauri-apps/api": "1.2.0",
     "roboto-fontface": "0.10.0",
     "unified-network": "0.6.4",
