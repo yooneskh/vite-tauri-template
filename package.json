@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "serve": "vite",
-    "serve:tauri": "VITE_NETWORK_PROCESSOR=tauri vite",
+    "serve:tauri": "cross-env VITE_NETWORK_PROCESSOR=tauri vite",
     "serve:native": "tauri dev",
-    "build": "VITE_NETWORK_PROCESSOR=tauri vite build && tauri build",
+    "build": "cross-env VITE_NETWORK_PROCESSOR=tauri vite build && tauri build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@tauri-apps/cli": "1.4.0",
     "@vitejs/plugin-vue": "4.0.0",
+    "cross-env": "7.0.3",
     "sass": "1.63.6",
     "vite": "4.4.2",
     "vite-plugin-vuetify": "1.0.2"

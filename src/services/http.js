@@ -19,8 +19,6 @@ if (import.meta.env.VITE_NETWORK_PROCESSOR === 'tauri') {
       responseType: ResponseType.Text,
     });
 
-    console.log({ response });
-
 
     responseStatus = response.status;
     responseHeaders = response.headers;
