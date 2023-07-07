@@ -23,7 +23,7 @@
     "@tauri-apps/cli": "1.4.0",
     "@vitejs/plugin-vue": "4.0.0",
     "sass": "1.63.6",
-    "vite": "4.1.1",
+    "vite": "4.4.2",
     "vite-plugin-vuetify": "1.0.2"
   },
   "main": "index.js",
